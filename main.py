@@ -96,6 +96,7 @@ class Agent:
             f"--- OBSERVATION ---\n{observation}\n---\n\n"
             f"Here are the tools available to you. You MUST choose one of these tools:\n{get_tool_descriptions()}\n\n"
             f"Here is the history of actions you have already taken:\n{self.history}\n\n"
+            f"General Rule: After you perform a 'click' action that you believe is a login or submit button, you should almost always use the 'wait_for_element' tool on the next step to ensure the new page has loaded before proceeding. Look for a welcome message or a dashboard element.\n\n"
             f"Your response MUST be a JSON object with two keys: 'thought' and 'action'.\n"
             f"The 'thought' should be a brief explanation of your reasoning for the action.\n"
             f"The 'action' must be a JSON object with a 'tool_name' key, which must be one of the tool names from the list above, "
