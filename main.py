@@ -94,11 +94,11 @@ class Agent:
             f"Based on the current view of the webpage, decide the single next action to take. "
             f"The page's interactive elements are provided below as a JSON object:\n"
             f"--- OBSERVATION ---\n{observation}\n---\n\n"
-            f"Here are the tools available to you:\n{get_tool_descriptions()}\n\n"
+            f"Here are the tools available to you. You MUST choose one of these tools:\n{get_tool_descriptions()}\n\n"
             f"Here is the history of actions you have already taken:\n{self.history}\n\n"
             f"Your response MUST be a JSON object with two keys: 'thought' and 'action'.\n"
             f"The 'thought' should be a brief explanation of your reasoning for the action.\n"
-            f"The 'action' must be a JSON object with a 'tool_name' key (the name of the tool to use) "
+            f"The 'action' must be a JSON object with a 'tool_name' key, which must be one of the tool names from the list above, "
             f"and an 'args' key (an object with the arguments for that tool).\n"
             f"If you believe you have completed the goal, use the 'finish' tool."
         )
